@@ -1,2 +1,2 @@
-# Itaca
+# Ithaca
 GGJ19
