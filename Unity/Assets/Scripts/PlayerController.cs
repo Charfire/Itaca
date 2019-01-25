@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float movementSpeed = 2.5f;
     private Transform playerLocation;
-    
+
     private void Start()
     {
         playerLocation = this.GetComponent<Transform>();
@@ -15,10 +15,14 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        movePlayer();
+        MovePlayer();
+        if (Input.GetButtonDown("Jump"))
+        {
+            Interact(Vector2.up);
+        }
     }
 
-    private void movePlayer()
+    private void MovePlayer()
     {
         float xMovement = Input.GetAxisRaw("Horizontal") * Time.deltaTime * movementSpeed;
         float yMovement = Input.GetAxisRaw("Vertical") * Time.deltaTime * movementSpeed;
@@ -26,5 +30,14 @@ public class PlayerController : MonoBehaviour
         playerLocation.position = new Vector3(playerLocation.position.x + xMovement,
                                                 playerLocation.position.y + yMovement,
                                                 playerLocation.position.z);
+    }
+
+    private void Interact(Vector2 direction)
+    {
+        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, 2, LayerMask.GetMask("Interactable"));
+        if (hit.collider != null)
+        {
+            Debug.Log("Interacted with " + hit.collider.tag);
+        }
     }
 }
