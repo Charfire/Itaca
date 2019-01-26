@@ -28,7 +28,6 @@ public class PlayerController : MonoBehaviour
     {
         playerLocation = this.GetComponent<Transform>();
 
-
     }
 
     private void Update()
@@ -69,11 +68,14 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log("Found " + hit.collider.tag);
-            PlayerInteraction(hit);
+            if(PlayerInteraction != null)
+            {
+                PlayerInteraction(hit);
+            }
 
             if (hit.collider.tag == "Wood")
             {
-                UseAxe();
+                UseAxe(hit.collider.gameObject);
             }
 
             if (hit.collider.gameObject.name == "Axe")
@@ -88,16 +90,16 @@ public class PlayerController : MonoBehaviour
 
 
     //abilities
-    private void UseAxe()
+    private void UseAxe(GameObject go)
     {
         if (hasAxe)
         {
             resources.wood = 1;
+            go.GetComponent<Tree>().chopAtTree(1);
 
         }
         else
         {
-
             Debug.Log("If only I had an axe, I could chop some wood");
         }
         
