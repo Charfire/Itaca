@@ -54,7 +54,10 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log("Found " + hit.collider.tag);
-            PlayerInteraction(hit);
+            if(PlayerInteraction != null)
+            {
+                PlayerInteraction(hit);
+            }
 
             if (hit.collider.tag == "Wood")
             {
