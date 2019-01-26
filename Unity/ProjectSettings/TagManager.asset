@@ -50,3 +50,6 @@ TagManager:
   - name: Player
     uniqueID: 205378861
     locked: 0
+  - name: Resources
+    uniqueID: 3725885085
+    locked: 0
