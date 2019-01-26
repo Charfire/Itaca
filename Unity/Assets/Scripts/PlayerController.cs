@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     {
         playerLocation = this.GetComponent<Transform>();
 
+
     }
 
     private void Update()
@@ -36,7 +37,9 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         MovePlayer();
+
         if (Input.GetButtonDown("Jump"))
         {
             Interact(playerLocation.TransformDirection(Vector3.up));
