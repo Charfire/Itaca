@@ -70,11 +70,9 @@ public class PlayerController : MonoBehaviour
         if (hasAxe)
         {
             resources.wood = 1;
-
         }
         else
         {
-
             Debug.Log("If only I had an axe, I could chop some wood");
         }
         
