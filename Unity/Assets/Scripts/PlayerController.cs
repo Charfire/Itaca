@@ -83,10 +83,10 @@ public class PlayerController : MonoBehaviour
         {
             resources.wood = 1;
             go.GetComponent<Tree>().chopAtTree(1);
+
         }
         else
         {
-
             Debug.Log("If only I had an axe, I could chop some wood");
         }
         
