@@ -5,8 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject dialogueBox;
+
     [SerializeField]
     private Text nameText;
     [SerializeField]
@@ -29,7 +28,7 @@ public class DialogueManager : MonoBehaviour
     {
         sentences = new Queue<string>();
         inConversation = false;
-        dialogueBox.SetActive(false);
+        gameObject.SetActive(false);
     }
 
     private void Update()
@@ -62,7 +61,7 @@ public class DialogueManager : MonoBehaviour
         }
         NextSentence();
         inConversation = true;
-        dialogueBox.SetActive(true);
+        gameObject.SetActive(true);
     }
 
     public void NextSentence()
