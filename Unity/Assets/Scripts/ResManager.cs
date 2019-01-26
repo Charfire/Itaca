@@ -45,7 +45,7 @@ public class ResManager : MonoBehaviour
 
         set
         {
-            this.foodAmount = value;
+            this.foodAmount += value;
         }
     }
 
@@ -58,7 +58,7 @@ public class ResManager : MonoBehaviour
 
         set
         {
-            this.woodAmount = value;
+            this.woodAmount += value;
         }
     }
 
@@ -71,7 +71,7 @@ public class ResManager : MonoBehaviour
 
         set
         {
-            this.stoneAmount = value;
+            this.stoneAmount += value;
         }
     }
 }
