@@ -80,7 +80,7 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         inConversation = false;
-        dialogueBox.SetActive(false);
+        gameObject.SetActive(false);
         if (currentDialogue.ending != null)
         {
             currentDialogue.ending.EndDialogue();
