@@ -56,6 +56,10 @@ public class DialogueManager : MonoBehaviour
 
     public void StartConversation(Dialogue dialogue)
     {
+        if (dialogue == null)
+        {
+            return;
+        }
         currentDialogue = dialogue;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
