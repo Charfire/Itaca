@@ -17,9 +17,14 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ResManager resources;
 
+    //Animation
+    [SerializeField]
+    private Animator animator;
+
     private void Start()
     {
         playerLocation = this.GetComponent<Transform>();
+
     }
 
     private void Update()
@@ -29,6 +34,13 @@ public class PlayerController : MonoBehaviour
         {
             Interact(playerLocation.TransformDirection(Vector3.up));
         }
+    }
+
+    private void LateUpdate()
+    {
+        //animation
+        animator.SetFloat("Speed_hor", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Speed_ver", Input.GetAxisRaw("Vertical"));
     }
 
     private void MovePlayer()
