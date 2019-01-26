@@ -47,9 +47,14 @@ public class DialogueManager : MonoBehaviour
 
     public void StartConversation(Dialogue dialogue, Sprite npcImage, string npcName)
     {
-        currentDialogue = dialogue;
         nameText.text = npcName;
         npcSprite.sprite = npcImage;
+        StartConversation(dialogue);
+    }
+
+    public void StartConversation(Dialogue dialogue)
+    {
+        currentDialogue = dialogue;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
@@ -77,7 +82,10 @@ public class DialogueManager : MonoBehaviour
     {
         inConversation = false;
         dialogueBox.SetActive(false);
-        currentDialogue.ending.EndDialogue();
+        if (currentDialogue.ending != null)
+        {
+            currentDialogue.ending.EndDialogue();
+        }
     }
 
 }
