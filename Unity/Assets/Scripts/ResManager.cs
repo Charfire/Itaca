@@ -19,6 +19,13 @@ public class ResManager : MonoBehaviour
     [SerializeField] private GameObject stoneObject;
     private TextMeshProUGUI stoneText;
 
+    public static ResManager resourceManager;
+
+    private void Awake()
+    {
+        resourceManager = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {

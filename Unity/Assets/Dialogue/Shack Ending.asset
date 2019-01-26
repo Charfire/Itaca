@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6c452b5e065cf44e8e08980c6cfa784, type: 3}
+  m_Name: Shack Ending
+  m_EditorClassIdentifier: 
+  buildingToPlace: {fileID: 4363377817479791903, guid: 22acc6d2ff045fc4a9da4c94ed9f32f1,
+    type: 3}
+  placeCoordinates: {x: -4.5, y: 2.7}
+  cost: 10
+  resource: wood
+  successDialogue: {fileID: 11400000, guid: 9cca2348d7ce55f499c2dd3f58b7325b, type: 2}
+  failDialogue: {fileID: 11400000, guid: de558ddc31673dd47b283e20121120a2, type: 2}
