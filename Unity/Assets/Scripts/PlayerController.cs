@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         if (Input.GetButtonDown("Jump"))
         {
-            Interact(Vector2.up);
+            Interact(playerLocation.TransformDirection(Vector3.forward));
         }
     }
 
