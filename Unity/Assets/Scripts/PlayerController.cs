@@ -20,9 +20,14 @@ public class PlayerController : MonoBehaviour
 
     public event Action<RaycastHit2D> PlayerInteraction;
 
+    //Animation
+    [SerializeField]
+    private Animator animator;
+
     private void Start()
     {
         playerLocation = this.GetComponent<Transform>();
+
     }
 
     private void Update()
@@ -31,11 +36,20 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         MovePlayer();
+
         if (Input.GetButtonDown("Jump"))
         {
             Interact(playerLocation.TransformDirection(Vector3.up));
         }
+    }
+
+    private void LateUpdate()
+    {
+        //animation
+        animator.SetFloat("Speed_hor", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Speed_ver", Input.GetAxisRaw("Vertical"));
     }
 
     private void MovePlayer()
@@ -61,7 +75,7 @@ public class PlayerController : MonoBehaviour
 
             if (hit.collider.tag == "Wood")
             {
-                UseAxe();
+                UseAxe(hit.collider.gameObject);
             }
 
             if (hit.collider.gameObject.name == "Axe")
@@ -76,11 +90,13 @@ public class PlayerController : MonoBehaviour
 
 
     //abilities
-    private void UseAxe()
+    private void UseAxe(GameObject go)
     {
         if (hasAxe)
         {
             resources.wood = 1;
+            go.GetComponent<Tree>().chopAtTree(1);
+
         }
         else
         {
