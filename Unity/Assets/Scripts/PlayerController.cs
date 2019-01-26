@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ResManager resources;
 
+    public event Action<RaycastHit2D> PlayerInteraction;
+
     private void Start()
     {
         playerLocation = this.GetComponent<Transform>();
@@ -24,6 +27,10 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
+        if (DialogueManager.dialogueManager.inConversation)
+        {
+            return;
+        }
         MovePlayer();
         if (Input.GetButtonDown("Jump"))
         {
@@ -47,6 +54,7 @@ public class PlayerController : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.Log("Found " + hit.collider.tag);
+            PlayerInteraction(hit);
 
             if (hit.collider.tag == "Wood")
             {
