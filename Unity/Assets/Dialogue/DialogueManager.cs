@@ -5,29 +5,58 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject dialogueBox;
-    public Text nameText;
-    public Image npcSprite;
-    public Text sentenceText;
+    [SerializeField]
+    private GameObject dialogueBox;
+    [SerializeField]
+    private Text nameText;
+    [SerializeField]
+    private Image npcSprite;
+    [SerializeField]
+    private Text sentenceText;
 
+    public Dialogue currentDialogue;
     public Queue<string> sentences;
+    public bool inConversation;
+
+    public static DialogueManager dialogueManager;
+
+    private void Awake()
+    {
+        dialogueManager = this;
+    }
 
     private void Start()
     {
         sentences = new Queue<string>();
+        inConversation = false;
         dialogueBox.SetActive(false);
     }
 
-    public void StartConversation(Dialogue dialogue)
+    private void Update()
     {
-        nameText.text = dialogue.name;
-        npcSprite.sprite = dialogue.npcImage;
+        if (!inConversation)
+        {
+            return;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            NextSentence();
+        }
+    }
+
+    public void StartConversation(Dialogue dialogue, Sprite npcImage, string npcName)
+    {
+        currentDialogue = dialogue;
+        nameText.text = npcName;
+        npcSprite.sprite = npcImage;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
             sentences.Enqueue(sentence);
         }
         NextSentence();
+        inConversation = true;
         dialogueBox.SetActive(true);
     }
 
@@ -46,7 +75,9 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        inConversation = false;
         dialogueBox.SetActive(false);
+        currentDialogue.ending.EndDialogue();
     }
 
 }
