@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
 
     public event Action<RaycastHit2D> PlayerInteraction;
 
+    //Animation
+    [SerializeField]
+    private Animator animator;
+
     private void Start()
     {
         playerLocation = this.GetComponent<Transform>();
@@ -32,11 +36,20 @@ public class PlayerController : MonoBehaviour
         {
             return;
         }
+
         MovePlayer();
+
         if (Input.GetButtonDown("Jump"))
         {
             Interact(playerLocation.TransformDirection(Vector3.up));
         }
+    }
+
+    private void LateUpdate()
+    {
+        //animation
+        animator.SetFloat("Speed_hor", Input.GetAxisRaw("Horizontal"));
+        animator.SetFloat("Speed_ver", Input.GetAxisRaw("Vertical"));
     }
 
     private void MovePlayer()
