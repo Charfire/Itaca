@@ -14,6 +14,7 @@ public class DialogueManager : MonoBehaviour
     [SerializeField]
     private Text sentenceText;
 
+    public Dialogue currentDialogue;
     public Queue<string> sentences;
     public bool inConversation;
 
@@ -44,10 +45,11 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartConversation(Dialogue dialogue)
+    public void StartConversation(Dialogue dialogue, Sprite npcImage, string npcName)
     {
-        nameText.text = dialogue.name;
-        npcSprite.sprite = dialogue.npcImage;
+        currentDialogue = dialogue;
+        nameText.text = npcName;
+        npcSprite.sprite = npcImage;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
         {
@@ -75,6 +77,7 @@ public class DialogueManager : MonoBehaviour
     {
         inConversation = false;
         dialogueBox.SetActive(false);
+        currentDialogue.ending.EndDialogue();
     }
 
 }

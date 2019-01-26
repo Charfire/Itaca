@@ -292,8 +292,9 @@ GameObject:
   - component: {fileID: 1271153594}
   - component: {fileID: 1271153593}
   - component: {fileID: 1271153592}
+  - component: {fileID: 1271153595}
   m_Layer: 8
-  m_Name: NPC
+  m_Name: Peter
   m_TagString: NPC
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,6 +388,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1271153595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1271153591}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f936adee48453f94ca67769f9c12aabb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  currentDialogue: {fileID: 11400000, guid: 0ff20ddb80f75a14da5d107770f7738a, type: 2}
+  dialogueImage: {fileID: 21300000, guid: 40df1bc35106f4946b5b4b7d88584e2a, type: 3}
 --- !u!1 &1750592063
 GameObject:
   m_ObjectHideFlags: 0
@@ -439,7 +454,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9517f6fae28bcc542860156b5cf51702, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Name: 
+  m_EditorClassIdentifier: 
   dialogue: {fileID: 11400000, guid: 0ff20ddb80f75a14da5d107770f7738a, type: 2}
+  dialogueManager: {fileID: 0}
 --- !u!114 &1750592066
 MonoBehaviour:
   m_ObjectHideFlags: 0
