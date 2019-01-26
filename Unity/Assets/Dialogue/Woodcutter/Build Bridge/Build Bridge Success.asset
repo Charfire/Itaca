@@ -10,12 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5a7e38977e07304185cbb3d4f66d66b, type: 3}
-  m_Name: Test Dialogue
+  m_Name: Build Bridge Success
   m_EditorClassIdentifier: 
   sentences:
-  - Hello there!
-  - How do you do?
-  - I'm great!
-  - Oh you want to chop wood?
-  - Take this axe!
-  ending: {fileID: 11400000, guid: a6aeff84ea66d794db9958370d800fe8, type: 2}
+  - Awesome! We can now cross the river!
+  ending: {fileID: 0}
+  previousDialogue: {fileID: 0}

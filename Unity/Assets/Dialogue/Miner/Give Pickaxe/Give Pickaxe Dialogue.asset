@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a7e38977e07304185cbb3d4f66d66b, type: 3}
+  m_Name: Give Pickaxe Dialogue
+  m_EditorClassIdentifier: 
+  sentences:
+  - Thank god you found me!
+  - You are trying to get out?
+  - Perhaps we could gather some stone!
+  - Take this pickaxe. It's not much, but it'll do for now.
+  - If you bring me some stone later, I could upgrade the pickaxe for you.
+  ending: {fileID: 11400000, guid: 2b634475bb344ef4d8926cc4b1d3bbe1, type: 2}
+  previousDialogue: {fileID: 0}

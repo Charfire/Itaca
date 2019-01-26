@@ -94,7 +94,7 @@ public class PlayerController : MonoBehaviour
     {
         if (hasAxe)
         {
-            resources.wood = 1;
+            ResManager.resourceManager.AddResourceAmount(Resource.Wood, 1);
             go.GetComponent<Tree>().chopAtTree(1);
 
         }

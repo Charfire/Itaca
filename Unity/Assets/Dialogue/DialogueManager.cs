@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class DialogueManager : MonoBehaviour
     public bool inConversation;
 
     public static DialogueManager dialogueManager;
+
+    public event Action<Dialogue> DialogueSuccesfullyEnded;
 
     private void Awake()
     {
@@ -80,10 +83,14 @@ public class DialogueManager : MonoBehaviour
     public void EndDialogue()
     {
         inConversation = false;
-        dialogueBox.SetActive(false);
+        gameObject.SetActive(false);
         if (currentDialogue.ending != null)
         {
-            currentDialogue.ending.EndDialogue();
+            bool successfullyEndedDialogue = currentDialogue.ending.EndDialogue();
+            if (successfullyEndedDialogue)
+            {
+                DialogueSuccesfullyEnded(currentDialogue);
+            }
         }
     }
 

@@ -4,17 +4,28 @@ using UnityEngine;
 
 public class NPC : MonoBehaviour
 {
-    [SerializeField]
-    private Dialogue currentDialogue;
-
+  
     [SerializeField]
     private Sprite dialogueImage;
 
+    [SerializeField]
+    private Dialogue[] allDialogues;
 
-    // Start is called before the first frame update
+    private Queue<Dialogue> dialogueQueue;
+
+    private Dialogue currentDialogue;
+
+
     void Start()
     {
+        DialogueManager.dialogueManager.DialogueSuccesfullyEnded += OnDialogueEnded;
         FindObjectOfType<PlayerController>().PlayerInteraction += OnPlayerInteraction;
+        dialogueQueue = new Queue<Dialogue>();
+        foreach(Dialogue dialogue in allDialogues)
+        {
+            dialogueQueue.Enqueue(dialogue);
+        }
+        NextDialogue();
     }
 
 
@@ -26,5 +37,30 @@ public class NPC : MonoBehaviour
         }
 
         DialogueManager.dialogueManager.StartConversation(currentDialogue, dialogueImage, name);
+    }
+
+    public void OnDialogueEnded(Dialogue dialogue)
+    {
+        Debug.Log("Dialogue is: " + dialogue.name);
+        Debug.Log("Current dialogue is: " + currentDialogue.name);
+        if (currentDialogue.previousDialogue == null)
+        {
+            return;
+        }
+        if (dialogue != currentDialogue.previousDialogue)
+        {
+            return;
+        }
+        Debug.Log("Previous Dialoge ended");
+        NextDialogue();
+    }
+
+    public void NextDialogue()
+    {
+        if (dialogueQueue.Count == 0)
+        {
+            return;
+        }
+        currentDialogue = dialogueQueue.Dequeue();
     }
 }

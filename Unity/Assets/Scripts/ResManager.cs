@@ -1,23 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System;
 using UnityEngine;
 using TMPro;
+
+public enum Resource { Wood, Stone};
 
 public class ResManager : MonoBehaviour
 {
 
-    private int foodAmount;
-    private int woodAmount;
-    private int stoneAmount;
+    private Dictionary<Resource, int> resources;
+    private Dictionary<Resource, TextMeshProUGUI> resourceTexts;
 
-    [SerializeField] private GameObject foodObject;
-    private TextMeshProUGUI foodText;
-
-    [SerializeField] private GameObject woodObject;
+    [SerializeField]
     private TextMeshProUGUI woodText;
-
-    [SerializeField] private GameObject stoneObject;
+    [SerializeField]
     private TextMeshProUGUI stoneText;
+
+    
 
     public static ResManager resourceManager;
 
@@ -26,59 +26,41 @@ public class ResManager : MonoBehaviour
         resourceManager = this;
     }
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        foodText = foodObject.GetComponent<TextMeshProUGUI>();
-        woodText = woodObject.GetComponent<TextMeshProUGUI>();
-        stoneText = stoneObject.GetComponent<TextMeshProUGUI>();
+        resources = new Dictionary<Resource, int>();
+        resourceTexts = new Dictionary<Resource, TextMeshProUGUI>();
+        foreach (Resource resource in Enum.GetValues(typeof(Resource)))
+        {
+            resources.Add(resource, 0);
+        }
+
+        resourceTexts.Add(Resource.Stone, stoneText);
+        resourceTexts.Add(Resource.Wood, woodText);
         
     }
 
-    // Update is called once per frame
     void Update()
     {
-        foodText.text = foodAmount.ToString();
-        woodText.text = woodAmount.ToString();
-        stoneText.text = stoneAmount.ToString();
+        UpdateResourceTexts();
     }
 
-    public int food
+    public int GetResourceAmount(Resource resource)
     {
-        get
-        {
-            return this.foodAmount;
-        }
-
-        set
-        {
-            this.foodAmount += value;
-        }
+        return resources[resource];
     }
 
-    public int wood
+    public void AddResourceAmount(Resource resource, int value)
     {
-        get
-        {
-            return this.woodAmount;
-        }
-
-        set
-        {
-            this.woodAmount += value;
-        }
+        resources[resource] += value;
     }
 
-    public int stone
+    public void UpdateResourceTexts()
     {
-        get
+        foreach (KeyValuePair<Resource, int> kvp in resources)
         {
-            return this.stoneAmount;
-        }
-
-        set
-        {
-            this.stoneAmount += value;
+            resourceTexts[kvp.Key].text = kvp.Value.ToString();
         }
     }
+
 }

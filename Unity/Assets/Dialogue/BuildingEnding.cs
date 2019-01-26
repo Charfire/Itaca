@@ -12,26 +12,31 @@ public class BuildingEnding : DialogueEnding
     [SerializeField]
     protected int cost;
     [SerializeField]
-    protected string resource;
+    protected Resource resource;
     public Dialogue successDialogue;
     public Dialogue failDialogue;
 
-    public override void EndDialogue()
+    public override bool EndDialogue()
     {
-        if (resource == "wood")
-        {
-            if (ResManager.resourceManager.wood < cost)
+
+            if (ResManager.resourceManager.GetResourceAmount(resource) < cost)
             {
                 DialogueManager.dialogueManager.StartConversation(failDialogue);
+            return false;
             }
             else
             {
                 DialogueManager.dialogueManager.StartConversation(successDialogue);
-                ResManager.resourceManager.wood = -cost;
-                Vector3 position = new Vector3(placeCoordinates.x, placeCoordinates.y, 0);
-                Instantiate(buildingToPlace, position, Quaternion.identity);
+                ResManager.resourceManager.AddResourceAmount(resource, -cost);
+
+                if (buildingToPlace != null)
+                {
+                    Vector3 position = new Vector3(placeCoordinates.x, placeCoordinates.y, 0);
+                    Instantiate(buildingToPlace, position, Quaternion.identity);
+                }
+            return true;
             }
-        }
     }
+
 
 }
