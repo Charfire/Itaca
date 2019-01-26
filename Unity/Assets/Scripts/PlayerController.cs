@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
     private float interactionReach = 2f;
     private Transform playerLocation;
 
+    //abilities
+    private bool hasAxe;
+
+    //resource manager
+    [SerializeField]
+    private ResManager resources;
+
     private void Start()
     {
         playerLocation = this.GetComponent<Transform>();
@@ -39,7 +46,47 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, interactionReach, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
-            Debug.Log("Interacted with " + hit.collider.tag);
+            Debug.Log("Found " + hit.collider.tag);
+
+            if (hit.collider.tag == "Wood")
+            {
+                UseAxe();
+            }
+
+            if (hit.collider.gameObject.name == "Axe")
+            {
+                GainAbility("Axe");
+                hit.collider.gameObject.SetActive(false);
+            }
+        }
+    }
+
+    
+
+
+    //abilities
+    private void UseAxe()
+    {
+        if (hasAxe)
+        {
+            resources.wood = 1;
+
+        }
+        else
+        {
+
+            Debug.Log("If only I had an axe, I could chop some wood");
+        }
+        
+    }
+
+    //Dialogues can call to this to unlock abilities
+    //Doesn't really need to be public atm, but is in anticipation of extra functions
+    public void GainAbility(string ability)
+    {
+        if (ability == "Axe")
+        {
+            hasAxe = true;
         }
     }
 }
