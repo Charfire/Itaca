@@ -9,6 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b67bedc973dc67844aad2781468edd45, type: 3}
-  m_Name: Axe ending
+  m_Script: {fileID: 11500000, guid: f82d425dce18b4b4bb84a944788ed6fd, type: 3}
+  m_Name: GivePickaxeEnding
   m_EditorClassIdentifier: 
+  ability: pickaxe

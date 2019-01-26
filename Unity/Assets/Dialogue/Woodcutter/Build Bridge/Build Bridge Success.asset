@@ -10,8 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5a7e38977e07304185cbb3d4f66d66b, type: 3}
-  m_Name: Building Success dialogue
+  m_Name: Build Bridge Success
   m_EditorClassIdentifier: 
   sentences:
-  - Great! I'll start building right away!
+  - Awesome! We can now cross the river!
   ending: {fileID: 0}
+  previousDialogue: {fileID: 0}

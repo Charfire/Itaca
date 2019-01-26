@@ -1,0 +1,50 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &390365445121759560
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5171472143352181998}
+  - component: {fileID: 1564631274654203837}
+  m_Layer: 0
+  m_Name: NPC Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5171472143352181998
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390365445121759560}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1564631274654203837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 390365445121759560}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce5be19e9a6d5a94f8dbd2bdb6af0197, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodcutter: {fileID: 1559174804, guid: 78cf4d31b8729144b902f439f58f16d0, type: 3}
+  hunter: {fileID: 1966266951, guid: 7f9e46ade1c31c04db727cef9f352c15, type: 3}
+  miner: {fileID: 1314382753, guid: afa9a61347e452e4b8293e969f191ce2, type: 3}
+  fisherman: {fileID: 317291252, guid: 1cce81e33f5da064f89dd993334c1b90, type: 3}
+  electrician: {fileID: 1964422411, guid: 0fa6bbfb0a42a8c4298ddb63b0468b4b, type: 3}

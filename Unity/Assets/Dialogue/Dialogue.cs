@@ -7,4 +7,5 @@ public class Dialogue : ScriptableObject //ScriptableObject or Serializable?
 {
     public string[] sentences;
     public DialogueEnding ending;
+    public Dialogue previousDialogue;
 }
