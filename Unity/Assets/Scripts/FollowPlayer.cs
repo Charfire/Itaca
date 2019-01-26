@@ -10,7 +10,7 @@ public class FollowPlayer : MonoBehaviour
         cameraLocation = this.GetComponent<Transform>();
     }
 
-    void Update()
+    void LateUpdate()
     {
         Transform player = GameObject.FindWithTag("Player").transform;
         Follow(player);
