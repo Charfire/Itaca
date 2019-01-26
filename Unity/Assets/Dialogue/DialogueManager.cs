@@ -5,17 +5,43 @@ using UnityEngine.UI;
 
 public class DialogueManager : MonoBehaviour
 {
-    public GameObject dialogueBox;
-    public Text nameText;
-    public Image npcSprite;
-    public Text sentenceText;
+    [SerializeField]
+    private GameObject dialogueBox;
+    [SerializeField]
+    private Text nameText;
+    [SerializeField]
+    private Image npcSprite;
+    [SerializeField]
+    private Text sentenceText;
 
     public Queue<string> sentences;
+    public bool inConversation;
+
+    public static DialogueManager dialogueManager;
+
+    private void Awake()
+    {
+        dialogueManager = this;
+    }
 
     private void Start()
     {
         sentences = new Queue<string>();
+        inConversation = false;
         dialogueBox.SetActive(false);
+    }
+
+    private void Update()
+    {
+        if (!inConversation)
+        {
+            return;
+        }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            NextSentence();
+        }
     }
 
     public void StartConversation(Dialogue dialogue)
@@ -28,6 +54,7 @@ public class DialogueManager : MonoBehaviour
             sentences.Enqueue(sentence);
         }
         NextSentence();
+        inConversation = true;
         dialogueBox.SetActive(true);
     }
 
@@ -46,6 +73,7 @@ public class DialogueManager : MonoBehaviour
 
     public void EndDialogue()
     {
+        inConversation = false;
         dialogueBox.SetActive(false);
     }
 

@@ -13,7 +13,8 @@ public class DialogueTrigger : MonoBehaviour
 
     private void Start()
     {
-        dialogueManager = GameObject.Find("DialogueManager").GetComponent<DialogueManager>(); //Switch to singleton later
+        dialogueManager = DialogueManager.dialogueManager;
+        //dialogueManager = GameObject.Find("Dialogue Box").GetComponent<DialogueManager>(); //Switch to singleton later
     }
 
     public void TriggerDialogue()
