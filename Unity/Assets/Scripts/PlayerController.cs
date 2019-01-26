@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     private float movementSpeed = 2.5f;
+    [SerializeField]
+    private float interactionReach = 2f;
     private Transform playerLocation;
 
     private void Start()
@@ -18,7 +20,7 @@ public class PlayerController : MonoBehaviour
         MovePlayer();
         if (Input.GetButtonDown("Jump"))
         {
-            Interact(playerLocation.TransformDirection(Vector3.forward));
+            Interact(playerLocation.TransformDirection(Vector3.up));
         }
     }
 
@@ -34,7 +36,7 @@ public class PlayerController : MonoBehaviour
 
     private void Interact(Vector2 direction)
     {
-        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, 2, LayerMask.GetMask("Interactable"));
+        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, interactionReach, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
             Debug.Log("Interacted with " + hit.collider.tag);
