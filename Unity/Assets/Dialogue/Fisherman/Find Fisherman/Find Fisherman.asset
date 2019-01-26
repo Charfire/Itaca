@@ -16,4 +16,4 @@ MonoBehaviour:
   - Oh hello there!
   - I thought I was gonna be stuck here forever!
   ending: {fileID: 0}
-  previousDialogue: {fileID: 0}
+  previousDialogue: {fileID: 11400000, guid: e6a0820d0e42d19439ba9d80cbcfab4a, type: 2}

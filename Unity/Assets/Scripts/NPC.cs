@@ -25,7 +25,10 @@ public class NPC : MonoBehaviour
         {
             dialogueQueue.Enqueue(dialogue);
         }
-        NextDialogue();
+        if (dialogueQueue.Peek().previousDialogue == null)
+        {
+            NextDialogue();
+        }
     }
 
 
@@ -41,17 +44,19 @@ public class NPC : MonoBehaviour
 
     public void OnDialogueEnded(Dialogue dialogue)
     {
-        Debug.Log("Dialogue is: " + dialogue.name);
-        Debug.Log("Current dialogue is: " + currentDialogue.name);
+        if (currentDialogue == null)
+        {
+            return;
+        }
         if (currentDialogue.previousDialogue == null)
         {
+            NextDialogue();
             return;
         }
         if (dialogue != currentDialogue.previousDialogue)
         {
             return;
         }
-        Debug.Log("Previous Dialoge ended");
         NextDialogue();
     }
 
