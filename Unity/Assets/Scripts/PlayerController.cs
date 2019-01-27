@@ -15,10 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool hasAxe;
     [SerializeField]
     private bool hasPickaxe;
-
-    //resource manager
-    [SerializeField]
-    private ResManager resources;
+    private bool hasUpgradedPickaxe;
 
     [SerializeField]
     AudioClip cutTreeClip;
@@ -85,7 +82,8 @@ public class PlayerController : MonoBehaviour
 
     private void Interact(Vector2 direction, float reach)
     {
-        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, reach, LayerMask.GetMask("Interactable"));
+        Vector2 boxSize = new Vector2(1, reach);
+        RaycastHit2D hit = Physics2D.BoxCast(playerLocation.position, boxSize, 0, direction, 0.1f, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
             Debug.Log("Found " + hit.collider.tag);
@@ -155,11 +153,17 @@ public class PlayerController : MonoBehaviour
         if (ability == "Axe")
         {
             hasAxe = true;
+            ResManager.resourceManager.AddTool(ability);
         }
         if (ability == "Pickaxe")
         {
             hasPickaxe = true;
+            ResManager.resourceManager.AddTool(ability);
         }
-
+        if (ability == "Upgraded pickaxe")
+        {
+            hasUpgradedPickaxe = true;
+            ResManager.resourceManager.AddTool(ability);
+        }
     }
 }
