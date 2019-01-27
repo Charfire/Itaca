@@ -141,7 +141,7 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Stone , 1);
             go.GetComponent<Stone>().pickStone(1);
-            //AudioManager.audioManager.PlaySoundEffect(pickStoneClip);
+            AudioManager.audioManager.PlaySoundEffect(pickStoneClip);
 
         }
         else

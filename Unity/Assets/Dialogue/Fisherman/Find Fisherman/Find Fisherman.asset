@@ -15,7 +15,8 @@ MonoBehaviour:
   sentences:
   - Oh hello there!
   - I thought I was gonna be stuck here forever!
-  ending: {fileID: 0}
+  - Get everyone and let's leave this place!
+  ending: {fileID: 11400000, guid: 7f2acab19364d1c40afd9a4688288e88, type: 2}
   previousDialogue: {fileID: 0}
   requirements: 0
   stageReq: 0
