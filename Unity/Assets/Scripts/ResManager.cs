@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System;
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 public enum Resource { Wood, Stone};
 
@@ -63,4 +64,8 @@ public class ResManager : MonoBehaviour
         }
     }
 
+    public void AddTool(String tool)
+    {
+        GameObject.Find(tool + " graphic").GetComponent<Image>().enabled = true;
+    }
 }

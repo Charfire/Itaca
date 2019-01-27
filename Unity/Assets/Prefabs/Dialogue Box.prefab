@@ -34,7 +34,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 5.8299866, y: 0}
+  m_AnchoredPosition: {x: 36.5, y: 22.120003}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &8105640002819138656
@@ -90,6 +90,7 @@ GameObject:
   - component: {fileID: 8105640003056819431}
   - component: {fileID: 8105640003056819429}
   - component: {fileID: 8105640003056819430}
+  - component: {fileID: 5229893932257275206}
   - component: {fileID: 3170958280110934904}
   m_Layer: 5
   m_Name: Dialogue Box
@@ -118,8 +119,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 20}
-  m_SizeDelta: {x: 714.8, y: 184.04}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 809, y: 179.3}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!222 &8105640003056819429
 CanvasRenderer:
@@ -149,8 +150,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: a5ab758889d643b4f965b49b1feb2b94, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -158,6 +159,18 @@ MonoBehaviour:
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
+--- !u!114 &5229893932257275206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8105640003056819432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d262b9e43841cee479e9552d26c94b2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3170958280110934904
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -175,6 +188,7 @@ MonoBehaviour:
   sentenceText: {fileID: 8105640003844093211}
   currentDialogue: {fileID: 0}
   inConversation: 0
+  progressMan: {fileID: 5229893932257275206}
 --- !u!1 &8105640003210350906
 GameObject:
   m_ObjectHideFlags: 0
@@ -288,8 +302,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 147.5}
+  m_AnchoredPosition: {x: 36.5, y: -32.02}
+  m_SizeDelta: {x: 89.085, y: 87.28}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &8105640003715013501
 CanvasRenderer:
@@ -362,8 +376,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 48.2, y: 12.285}
-  m_SizeDelta: {x: 584.2, y: 135.53}
+  m_AnchoredPosition: {x: -17, y: -11.7}
+  m_SizeDelta: {x: 428.5, y: 111.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8105640003844093210
 CanvasRenderer:
@@ -442,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchoredPosition: {x: -24, y: 30}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 1, y: 0}
 --- !u!222 &8105640004367412647

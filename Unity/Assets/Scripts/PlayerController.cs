@@ -15,10 +15,12 @@ public class PlayerController : MonoBehaviour
     private bool hasAxe;
     [SerializeField]
     private bool hasPickaxe;
+    private bool hasUpgradedPickaxe;
 
-    //resource manager
     [SerializeField]
-    private ResManager resources;
+    AudioClip cutTreeClip;
+    [SerializeField]
+    AudioClip pickStoneClip;
 
     public event Action<RaycastHit2D> PlayerInteraction;
 
@@ -86,7 +88,8 @@ public class PlayerController : MonoBehaviour
 
     private void Interact(Vector2 direction, float reach)
     {
-        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, reach, LayerMask.GetMask("Interactable"));
+        Vector2 boxSize = new Vector2(1, reach);
+        RaycastHit2D hit = Physics2D.BoxCast(playerLocation.position, boxSize, 0, direction, 0.1f, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
             Debug.Log("Found " + hit.collider.tag);
@@ -123,6 +126,7 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Wood, 1);
             go.GetComponent<Tree>().chopAtTree(1);
+            AudioManager.audioManager.PlaySoundEffect(cutTreeClip);
 
         }
         else
@@ -138,6 +142,7 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Stone , 1);
             go.GetComponent<Stone>().pickStone(1);
+            AudioManager.audioManager.PlaySoundEffect(pickStoneClip);
 
         }
         else
@@ -154,11 +159,17 @@ public class PlayerController : MonoBehaviour
         if (ability == "Axe")
         {
             hasAxe = true;
+            ResManager.resourceManager.AddTool(ability);
         }
         if (ability == "Pickaxe")
         {
             hasPickaxe = true;
+            ResManager.resourceManager.AddTool(ability);
         }
-
+        if (ability == "Upgraded pickaxe")
+        {
+            hasUpgradedPickaxe = true;
+            ResManager.resourceManager.AddTool(ability);
+        }
     }
 }
