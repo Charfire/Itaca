@@ -125,7 +125,7 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Wood, 1);
             go.GetComponent<Tree>().chopAtTree(1);
-            //AudioManager.audioManager.PlaySoundEffect(cutTreeClip);
+            AudioManager.audioManager.PlaySoundEffect(cutTreeClip);
 
         }
         else

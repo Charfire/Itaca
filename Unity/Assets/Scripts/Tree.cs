@@ -25,7 +25,7 @@ public class Tree : MonoBehaviour
 
         if(woodAmount <= 0)
         {
-            //AudioManager.audioManager.PlaySoundEffect(audioClip);
+            AudioManager.audioManager.PlaySoundEffect(audioClip);
             Destroy(this.gameObject);
         }
     }
