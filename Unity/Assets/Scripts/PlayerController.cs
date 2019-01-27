@@ -15,10 +15,7 @@ public class PlayerController : MonoBehaviour
     private bool hasAxe;
     [SerializeField]
     private bool hasPickaxe;
-
-    //resource manager
-    [SerializeField]
-    private ResManager resources;
+    private bool hasUpgradedPickaxe;
 
     public event Action<RaycastHit2D> PlayerInteraction;
 
@@ -149,11 +146,17 @@ public class PlayerController : MonoBehaviour
         if (ability == "Axe")
         {
             hasAxe = true;
+            ResManager.resourceManager.AddTool(ability);
         }
         if (ability == "Pickaxe")
         {
             hasPickaxe = true;
+            ResManager.resourceManager.AddTool(ability);
         }
-
+        if (ability == "Upgraded pickaxe")
+        {
+            hasUpgradedPickaxe = true;
+            ResManager.resourceManager.AddTool(ability);
+        }
     }
 }
