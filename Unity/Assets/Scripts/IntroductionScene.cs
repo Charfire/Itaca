@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class IntroductionScene : MonoBehaviour
 {
@@ -32,7 +33,7 @@ public class IntroductionScene : MonoBehaviour
         {
             if (cutsceneQueue.Count == 0)
             {
-                Debug.Log("Next scene");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
             } else
             {
                 panel.sprite = cutsceneQueue.Dequeue();
