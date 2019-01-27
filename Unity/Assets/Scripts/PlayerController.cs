@@ -92,7 +92,6 @@ public class PlayerController : MonoBehaviour
         RaycastHit2D hit = Physics2D.BoxCast(playerLocation.position, boxSize, 0, direction, 0.1f, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
-            Debug.Log("Found " + hit.collider.tag);
             if(PlayerInteraction != null)
             {
                 PlayerInteraction(hit);

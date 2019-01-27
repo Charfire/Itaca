@@ -68,21 +68,26 @@ public class NPC : MonoBehaviour
     {
         if(obj != gameObject)
         {
+            Debug.Log("Hoi1");
             return;
         }
         if (currentDialogue == null)
         {
+            Debug.Log("Hoi2");
             return;
         }
         if (currentDialogue.previousDialogue == null)
         {
+            Debug.Log("Hoi3");
             NextDialogue();
             return;
         }
-        if (dialogue != currentDialogue.previousDialogue)
-        {
-            return;
-        }
+        //if (dialogue.previousDialogue != currentDialogue)
+        //{
+        //    Debug.Log("Hoi4");
+        //    return;
+        //}
+        Debug.Log("Hoi5");
         NextDialogue();
     }
 

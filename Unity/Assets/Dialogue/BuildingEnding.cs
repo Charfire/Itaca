@@ -17,6 +17,8 @@ public class BuildingEnding : DialogueEnding
     protected GameObject Fade;
     [SerializeField]
     protected Vector2 newPosition;
+    [SerializeField]
+    protected bool bridge;
 
     public Dialogue successDialogue;
     public Dialogue failDialogue;
@@ -36,12 +38,14 @@ public class BuildingEnding : DialogueEnding
 
                 if (buildingToPlace != null)
                 {
-                Transform canvas = FindObjectOfType<Canvas>().transform;
+                    Transform canvas = FindObjectOfType<Canvas>().transform;
                     Instantiate(Fade, canvas);
                     Vector3 position = new Vector3(placeCoordinates.x, placeCoordinates.y, 0);
                     Instantiate(buildingToPlace, position, Quaternion.identity);
-                
-                obj.transform.position = newPosition;
+                    obj.transform.position = newPosition;
+                } else if (bridge)
+                {
+                    GameObject.Find("Bridge").GetComponent<Bridge>().BuildBridge();
                 }
             return true;
             }

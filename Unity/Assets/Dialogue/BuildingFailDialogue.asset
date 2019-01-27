@@ -14,4 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sentences:
   - You did not bring enough resources!
-  ending: {fileID: 0}
+  ending: {fileID: 11400000, guid: d0c42d55e0e9fb74b95f99bed90e4e34, type: 2}
+  previousDialogue: {fileID: 0}
+  requirements: 0
+  stageReq: 0
+  checkNPC: 0
+  checkReq: 0
+  regsNotMetSentece: 

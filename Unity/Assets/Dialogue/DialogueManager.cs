@@ -150,17 +150,16 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        if (currentDialogue != null && currentDialogue.ending != null)
+        if (currentDialogue != null)
         {
-
             int checkpointToSet = 0;
 
-            if (currentDialogue.ending.setCheckpoint > 0)
+            if (currentDialogue.ending != null && currentDialogue.ending.setCheckpoint > 0)
             {
                 checkpointToSet = currentDialogue.ending.setCheckpoint;
             }
 
-            bool successfullyEndedDialogue = currentDialogue.ending.EndDialogue(talkingPlayer);
+            bool successfullyEndedDialogue = currentDialogue.EndDialogue(talkingPlayer);
             if (successfullyEndedDialogue)
             {
                 if(checkpointToSet > 0)

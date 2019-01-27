@@ -12,9 +12,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c452b5e065cf44e8e08980c6cfa784, type: 3}
   m_Name: Build Bridge Ending
   m_EditorClassIdentifier: 
+  setCheckpoint: 0
+  setNewStage: 0
   buildingToPlace: {fileID: 0}
   placeCoordinates: {x: 0, y: 0}
   cost: 20
   resource: 0
+  Fade: {fileID: 0}
+  newPosition: {x: 0, y: 0}
+  bridge: 1
   successDialogue: {fileID: 11400000, guid: 4242b3d8cda6f3d4ebf7afa6193a433d, type: 2}
   failDialogue: {fileID: 11400000, guid: de558ddc31673dd47b283e20121120a2, type: 2}

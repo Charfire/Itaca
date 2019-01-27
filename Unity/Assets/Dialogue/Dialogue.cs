@@ -18,4 +18,14 @@ public class Dialogue : ScriptableObject //ScriptableObject or Serializable?
 
     public string regsNotMetSentece;
 
+    public bool EndDialogue(GameObject obj)
+    {
+        if(ending == null)
+        {
+            return true;
+        } else
+        {
+            return ending.EndDialogue(obj);
+        }
+    }
 }
