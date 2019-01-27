@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c452b5e065cf44e8e08980c6cfa784, type: 3}
   m_Name: Shack Ending
   m_EditorClassIdentifier: 
+  setCheckpoint: 1
+  setNewStage: 0
   buildingToPlace: {fileID: 4363377817479791903, guid: 22acc6d2ff045fc4a9da4c94ed9f32f1,
     type: 3}
   placeCoordinates: {x: 67, y: -43}

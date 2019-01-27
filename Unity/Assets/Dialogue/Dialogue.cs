@@ -16,4 +16,6 @@ public class Dialogue : ScriptableObject //ScriptableObject or Serializable?
     public NonPC checkNPC;
     public int checkReq = 0;
 
+    public string regsNotMetSentece;
+
 }

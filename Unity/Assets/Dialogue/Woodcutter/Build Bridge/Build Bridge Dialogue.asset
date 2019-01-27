@@ -17,3 +17,8 @@ MonoBehaviour:
   - If you bring me some wood, we could build a bridge to cross!
   ending: {fileID: 11400000, guid: 6ba84e3b42a53f5459f497df8834c94e, type: 2}
   previousDialogue: {fileID: 11400000, guid: ee20c78f59f97f84ebe95a45bdb66cf2, type: 2}
+  requirements: 1
+  stageReq: 0
+  checkNPC: 1
+  checkReq: 1
+  regsNotMetSentece: We should make sure we can eat before we try to explore.

@@ -39,7 +39,29 @@ public class NPC : MonoBehaviour
             return;
         }
 
-        DialogueManager.dialogueManager.StartConversation(currentDialogue, dialogueImage, name, gameObject);
+        NonPC npcName = NonPC.Electric;
+
+        switch (name)
+        {
+            case "Woodcutter":
+                npcName = NonPC.Woodcutter;
+                break;
+            case "Miner":
+                npcName = NonPC.Miner;
+                break;
+            case "Hunter":
+                npcName = NonPC.Hunter;
+                break;
+            case "Fisher":
+                npcName = NonPC.Fisher;
+                break;
+            case "Electrician":
+                npcName = NonPC.Electric;
+                break;
+        }
+
+
+        DialogueManager.dialogueManager.StartConversation(currentDialogue, dialogueImage, npcName, gameObject);
     }
 
     public void OnDialogueEnded(Dialogue dialogue, GameObject obj)
