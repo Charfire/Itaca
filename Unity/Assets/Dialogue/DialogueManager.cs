@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+public enum NonPC { Woodcutter, Hunter, Miner, Fisher, Electric };
+
 public class DialogueManager : MonoBehaviour
 {
 
@@ -24,6 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     private GameObject talkingPlayer;
 
+    private ProgressManager progressMan;
+
     private void Awake()
     {
         dialogueManager = this;
@@ -34,6 +38,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         inConversation = false;
         gameObject.SetActive(false);
+
+        progressMan = new ProgressManager();
+
     }
 
     private void Update()
@@ -63,6 +70,15 @@ public class DialogueManager : MonoBehaviour
         {
             return;
         }
+
+        if (dialogue.requirements == true)
+        {
+
+
+
+        }
+
+
         currentDialogue = dialogue;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
@@ -72,6 +88,8 @@ public class DialogueManager : MonoBehaviour
         NextSentence();
         inConversation = true;
         gameObject.SetActive(true);
+
+
     }
 
     public void NextSentence()
@@ -99,6 +117,11 @@ public class DialogueManager : MonoBehaviour
                 DialogueSuccesfullyEnded(currentDialogue, talkingPlayer);
             }
         }
+    }
+
+    private void ResetNPCChecks()
+    {
+
     }
 
 }
