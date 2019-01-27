@@ -68,8 +68,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9895828e26e80a1498e7c9b955fac3d1, type: 3}
-  m_Color: {r: 1, g: 0.051886797, b: 0.18504885, a: 1}
+  m_Sprite: {fileID: 21300000, guid: ced02291ece24c24ba30d53286561c7a, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f936adee48453f94ca67769f9c12aabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueImage: {fileID: 21300000, guid: 40df1bc35106f4946b5b4b7d88584e2a, type: 3}
+  dialogueImage: {fileID: 21300000, guid: 0c1917b6d9d7f3b41bb0e99a276c01f7, type: 3}
   allDialogues:
   - {fileID: 11400000, guid: 0ef47e62deca7d748a91669e19a1d092, type: 2}
   - {fileID: 11400000, guid: e6a0820d0e42d19439ba9d80cbcfab4a, type: 2}

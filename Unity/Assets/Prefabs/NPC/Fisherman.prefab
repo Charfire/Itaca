@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f936adee48453f94ca67769f9c12aabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueImage: {fileID: 21300000, guid: 40df1bc35106f4946b5b4b7d88584e2a, type: 3}
+  dialogueImage: {fileID: 21300000, guid: 6fc5e0ecd3f5df641af292b9a3cecfcb, type: 3}
   allDialogues:
   - {fileID: 11400000, guid: 5f332ffeeef2170418800eec637caba3, type: 2}
   - {fileID: 11400000, guid: 5ae9722b7c82ea64596ea05a59c76445, type: 2}
@@ -143,8 +143,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
-  m_Sprite: {fileID: 21300000, guid: 9895828e26e80a1498e7c9b955fac3d1, type: 3}
-  m_Color: {r: 0.11647564, g: 1, b: 0.05098039, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 20dd5bcafbef04d4f95c44c12faa23ef, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
