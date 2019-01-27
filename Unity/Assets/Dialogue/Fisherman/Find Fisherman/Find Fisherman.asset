@@ -11,15 +11,15 @@ MonoBehaviour:
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f5a7e38977e07304185cbb3d4f66d66b, type: 3}
   m_Name: Find Fisherman
-  m_EditorClassIdentifier:
+  m_EditorClassIdentifier: 
   sentences:
   - Oh hello there!
   - I thought I was gonna be stuck here forever!
   - Get everyone and let's leave this place!
-  ending: {fileID: 0}
-  previousDialogue: {fileID: 11400000, guid: e6a0820d0e42d19439ba9d80cbcfab4a, type: 2}
+  ending: {fileID: 11400000, guid: 7f2acab19364d1c40afd9a4688288e88, type: 2}
+  previousDialogue: {fileID: 0}
   requirements: 0
   stageReq: 0
   checkNPC: 0
   checkReq: 0
-  regsNotMetSentece:
+  regsNotMetSentece: 
