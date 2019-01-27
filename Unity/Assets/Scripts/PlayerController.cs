@@ -107,10 +107,9 @@ public class PlayerController : MonoBehaviour
                 UsePickaxe(hit.collider.gameObject);
             }
 
-            if (hit.collider.gameObject.name == "Axe")
+            if (hit.collider.tag == "Bedrock")
             {
-                GainAbility("Axe");
-                hit.collider.gameObject.SetActive(false);
+                UseUpgradedPickaxe(hit.collider.gameObject);
             }
         }
     }
@@ -141,6 +140,22 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Stone , 1);
             go.GetComponent<Stone>().pickStone(1);
+            AudioManager.audioManager.PlaySoundEffect(pickStoneClip);
+
+        }
+        else
+        {
+            //DialogueManager.dialogueManager.StartConversation(mineStoneDialogue, dialogueImage, name, gameObject);
+        }
+
+    }
+
+    private void UseUpgradedPickaxe(GameObject go)
+    {
+        if (hasUpgradedPickaxe)
+        {
+            ResManager.resourceManager.AddResourceAmount(Resource.Stone, 2);
+            go.GetComponent<Stone>().pickStone(2);
             AudioManager.audioManager.PlaySoundEffect(pickStoneClip);
 
         }

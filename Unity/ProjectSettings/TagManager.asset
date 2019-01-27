@@ -8,6 +8,7 @@ TagManager:
   - Resource
   - NPC
   - Stone
+  - Bedrock
   layers:
   - Default
   - TransparentFX

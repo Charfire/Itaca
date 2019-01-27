@@ -15,5 +15,10 @@ MonoBehaviour:
   sentences:
   - Hey, I can upgrade your pickaxe.
   - Did you get some stone?
-  ending: {fileID: 0}
-  previousDialogue: {fileID: 11400000, guid: 0ef47e62deca7d748a91669e19a1d092, type: 2}
+  ending: {fileID: 11400000, guid: 66c480e686c1ef648bd191d76852280a, type: 2}
+  previousDialogue: {fileID: 11400000, guid: 7b8087809f2f52c42ab8a4890256e809, type: 2}
+  requirements: 0
+  stageReq: 0
+  checkNPC: 0
+  checkReq: 0
+  regsNotMetSentece: 
