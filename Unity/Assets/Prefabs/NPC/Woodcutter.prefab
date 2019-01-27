@@ -124,7 +124,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f936adee48453f94ca67769f9c12aabb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueImage: {fileID: 21300000, guid: 40df1bc35106f4946b5b4b7d88584e2a, type: 3}
+  dialogueImage: {fileID: 21300000, guid: 6226548b20cd81f4eae31ed8e44e817e, type: 3}
   allDialogues:
   - {fileID: 11400000, guid: 0ff20ddb80f75a14da5d107770f7738a, type: 2}
   - {fileID: 11400000, guid: ee20c78f59f97f84ebe95a45bdb66cf2, type: 2}
