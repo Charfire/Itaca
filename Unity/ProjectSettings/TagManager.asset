@@ -7,6 +7,7 @@ TagManager:
   - Wood
   - Resource
   - NPC
+  - Stone
   layers:
   - Default
   - TransparentFX
