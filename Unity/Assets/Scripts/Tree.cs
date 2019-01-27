@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class Tree : MonoBehaviour
 {
+
+    [SerializeField]
+    private AudioClip audioClip;
+
     private int woodAmount;
     private ParticleSystem particles;
 
@@ -21,6 +25,7 @@ public class Tree : MonoBehaviour
 
         if(woodAmount <= 0)
         {
+            AudioManager.audioManager.PlaySoundEffect(audioClip);
             Destroy(this.gameObject);
         }
     }
