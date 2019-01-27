@@ -52,6 +52,8 @@ MonoBehaviour:
   interactionReach: 1
   hasPickaxe: 0
   resources: {fileID: 0}
+  cutTreeClip: {fileID: 8300000, guid: 81ef67355fe31b24ea4a0494eedf7c3d, type: 3}
+  pickStoneClip: {fileID: 8300000, guid: d28769d205fb63243a103f9d1c7a8bee, type: 3}
   animator: {fileID: 101781774}
 --- !u!114 &101781776
 MonoBehaviour:

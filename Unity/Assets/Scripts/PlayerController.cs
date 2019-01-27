@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private ResManager resources;
 
+    [SerializeField]
+    AudioClip cutTreeClip;
+    [SerializeField]
+    AudioClip pickStoneClip;
+
     public event Action<RaycastHit2D> PlayerInteraction;
 
     //Animation
@@ -117,6 +122,7 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Wood, 1);
             go.GetComponent<Tree>().chopAtTree(1);
+            AudioManager.audioManager.PlaySoundEffect(cutTreeClip);
 
         }
         else
@@ -132,6 +138,7 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Stone , 1);
             go.GetComponent<Stone>().pickStone(1);
+            AudioManager.audioManager.PlaySoundEffect(pickStoneClip);
 
         }
         else
