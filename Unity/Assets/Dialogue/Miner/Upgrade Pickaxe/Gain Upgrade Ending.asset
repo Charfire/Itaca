@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82d425dce18b4b4bb84a944788ed6fd, type: 3}
   m_Name: Gain Upgrade Ending
   m_EditorClassIdentifier: 
-  ability: UpgradedPickaxe
+  setCheckpoint: 0
+  setNewStage: 0
+  ability: Upgraded pickaxe
+  newModel: {fileID: 0}
