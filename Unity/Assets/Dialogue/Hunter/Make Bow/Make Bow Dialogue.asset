@@ -17,3 +17,9 @@ MonoBehaviour:
   - I need some supplies for a bow. Can you deliver?
   ending: {fileID: 11400000, guid: b81eda03651d59f4fa8f0950021e20a1, type: 2}
   previousDialogue: {fileID: 0}
+  requirements: 1
+  stageReq: 0
+  checkNPC: 0
+  checkReq: 1
+  regsNotMetSentece: We should focus on shelter, but I think our lumberjack friend
+    here might have an idea.

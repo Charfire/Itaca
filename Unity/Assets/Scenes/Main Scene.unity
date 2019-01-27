@@ -1944,6 +1944,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1966266950, guid: 7f9e46ade1c31c04db727cef9f352c15, type: 3}
+      propertyPath: m_Name
+      value: Hunter
+      objectReference: {fileID: 0}
     - target: {fileID: 1966266951, guid: 7f9e46ade1c31c04db727cef9f352c15, type: 3}
       propertyPath: allDialogues.Array.size
       value: 2
@@ -1953,10 +1957,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: fd2dc8610c8e6bf4a864a16672a9ddc7,
         type: 2}
-    - target: {fileID: 1966266950, guid: 7f9e46ade1c31c04db727cef9f352c15, type: 3}
-      propertyPath: m_Name
-      value: Hunter
-      objectReference: {fileID: 0}
     - target: {fileID: 1966266952, guid: 7f9e46ade1c31c04db727cef9f352c15, type: 3}
       propertyPath: m_LocalPosition.x
       value: 56.407

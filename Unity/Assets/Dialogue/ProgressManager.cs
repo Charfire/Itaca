@@ -33,11 +33,11 @@ public class ProgressManager : MonoBehaviour
 
     public bool IsNPCCheckpointReached(NonPC npc, int checkpoint)
     {
-        int checkValue;
-
+        int checkValue = 0;
+        
         npcCheckpoints.TryGetValue(npc, out checkValue);
-
-        if(checkpoint <= checkValue)
+        
+        if (checkpoint <= checkValue)
         {
             return true;
         }
@@ -51,11 +51,14 @@ public class ProgressManager : MonoBehaviour
     {
         npcCheckpoints.Remove(npc);
 
+        npcCheckpoints = new Dictionary<NonPC, int>();
+
         npcCheckpoints.Add(npc, checkpoint);
     }
 
     private void ResetNPCChecks()
     {
+
         npcCheckpoints.Clear();
 
         foreach (NonPC npc in Enum.GetValues(typeof(NonPC)))

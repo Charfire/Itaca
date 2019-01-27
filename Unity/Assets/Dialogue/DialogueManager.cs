@@ -26,7 +26,10 @@ public class DialogueManager : MonoBehaviour
 
     private GameObject talkingPlayer;
 
+    [SerializeField]
     private ProgressManager progressMan;
+
+    private NonPC mostRecentNPC;
 
     private void Awake()
     {
@@ -38,9 +41,6 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         inConversation = false;
         gameObject.SetActive(false);
-
-        progressMan = new ProgressManager();
-
     }
 
     private void Update()
@@ -56,9 +56,10 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartConversation(Dialogue dialogue, Sprite npcImage, string npcName, GameObject obj)
+    public void StartConversation(Dialogue dialogue, Sprite npcImage, NonPC npcName, GameObject obj)
     {
-        nameText.text = npcName;
+        mostRecentNPC = npcName;
+        nameText.text = npcName.ToString();
         npcSprite.sprite = npcImage;
         StartConversation(dialogue);
         talkingPlayer = obj;
@@ -99,6 +100,16 @@ public class DialogueManager : MonoBehaviour
             //TODO: Make the requirements failed sentence come up
             //!!!!!
 
+
+            currentDialogue = null;
+            sentences.Clear();
+
+            sentences.Enqueue(dialogue.regsNotMetSentece);
+
+            NextSentence();
+            inConversation = true;
+            gameObject.SetActive(true);
+
             return;
         }
 
@@ -133,12 +144,27 @@ public class DialogueManager : MonoBehaviour
     {
         inConversation = false;
         gameObject.SetActive(false);
-        if (currentDialogue.ending != null)
+
+        if (currentDialogue != null && currentDialogue.ending != null)
         {
+
+            int checkpointToSet = 0;
+
+            if (currentDialogue.ending.setCheckpoint > 0)
+            {
+                checkpointToSet = currentDialogue.ending.setCheckpoint;
+            }
+
             bool successfullyEndedDialogue = currentDialogue.ending.EndDialogue(talkingPlayer);
             if (successfullyEndedDialogue)
             {
+                if(checkpointToSet > 0)
+                {
+                    progressMan.SetNPCCheckpoint(mostRecentNPC, checkpointToSet);
+                }
+
                 DialogueSuccesfullyEnded(currentDialogue, talkingPlayer);
+
             }
         }
     }
