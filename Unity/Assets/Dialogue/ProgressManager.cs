@@ -64,4 +64,15 @@ public class ProgressManager : MonoBehaviour
         npcCheckpoints.Add(npc, checkpoint);
     }
 
+    public bool IsGameStageReached(int stageCheck)
+    {
+        if(stageCheck <= gameStage)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

@@ -66,16 +66,40 @@ public class DialogueManager : MonoBehaviour
 
     public void StartConversation(Dialogue dialogue)
     {
+        bool continueDialogue = true;
+        
         if (dialogue == null)
         {
             return;
         }
 
+        //check if any unmet requirements exist
         if (dialogue.requirements == true)
         {
+            if(dialogue.stageReq > 0)
+            {
+                if (progressMan.IsGameStageReached(dialogue.stageReq) == false)
+                {
+                    continueDialogue = false;
+                }
+            }
 
+            if(dialogue.checkReq > 0)
+            {
+                if(progressMan.IsNPCCheckpointReached(dialogue.checkNPC, dialogue.checkReq) == false)
+                {
+                    continueDialogue = false;
+                }
+            }
+        }
 
+        if(continueDialogue == false)
+        {
+            //!!!!!
+            //TODO: Make the requirements failed sentence come up
+            //!!!!!
 
+            return;
         }
 
 
@@ -118,10 +142,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
-
-    private void ResetNPCChecks()
-    {
-
-    }
+    
+    
 
 }
