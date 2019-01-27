@@ -13,10 +13,15 @@ public class BuildingEnding : DialogueEnding
     protected int cost;
     [SerializeField]
     protected Resource resource;
+    [SerializeField]
+    protected GameObject Fade;
+    [SerializeField]
+    protected Vector2 newPosition;
+
     public Dialogue successDialogue;
     public Dialogue failDialogue;
 
-    public override bool EndDialogue()
+    public override bool EndDialogue(GameObject obj)
     {
 
             if (ResManager.resourceManager.GetResourceAmount(resource) < cost)
@@ -31,12 +36,14 @@ public class BuildingEnding : DialogueEnding
 
                 if (buildingToPlace != null)
                 {
+                Transform canvas = FindObjectOfType<Canvas>().transform;
+                    Instantiate(Fade, canvas);
                     Vector3 position = new Vector3(placeCoordinates.x, placeCoordinates.y, 0);
                     Instantiate(buildingToPlace, position, Quaternion.identity);
+                
+                obj.transform.position = newPosition;
                 }
             return true;
             }
     }
-
-
 }
