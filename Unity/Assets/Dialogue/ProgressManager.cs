@@ -82,6 +82,8 @@ public class ProgressManager : MonoBehaviour
         if(gameStage < (int) newStage)
         {
             gameStage = (int)newStage;
+
+            ResetNPCChecks();
         }
     }
 }
