@@ -145,6 +145,11 @@ public class DialogueManager : MonoBehaviour
         inConversation = false;
         gameObject.SetActive(false);
 
+        if (talkingPlayer.name == "Player")
+        {
+            return;
+        }
+
         if (currentDialogue != null && currentDialogue.ending != null)
         {
 

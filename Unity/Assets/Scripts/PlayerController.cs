@@ -27,6 +27,12 @@ public class PlayerController : MonoBehaviour
     //Animation
     [SerializeField]
     private Animator animator;
+    [SerializeField]
+    private Dialogue chopWoodDialogue;
+    [SerializeField]
+    private Dialogue mineStoneDialogue;
+    [SerializeField]
+    private Sprite dialogueImage;
 
     private void Start()
     {
@@ -125,7 +131,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("If only I had an axe, I could chop some wood");
+            DialogueManager.dialogueManager.StartConversation(chopWoodDialogue, dialogueImage, name, gameObject);
         }
 
     }
@@ -141,7 +147,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            Debug.Log("If only I had a pickaxe, I could gather some stone.");
+            DialogueManager.dialogueManager.StartConversation(mineStoneDialogue, dialogueImage, name, gameObject);
         }
 
     }

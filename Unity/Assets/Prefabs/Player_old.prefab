@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6586514655246612937}
   - component: {fileID: 7981120043174388696}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Player_old
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -48,9 +48,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 2.5
   interactionReach: 2
+  hasPickaxe: 0
   resources: {fileID: 8366941966602023430, guid: 84b843431d6afc84ea640340a6991efe,
     type: 3}
   animator: {fileID: 6586514655246612937}
+  chopWoodDialogue: {fileID: 11400000, guid: 8e2700fc0a8cdca46b6be532b963332b, type: 2}
+  mineStoneDialogue: {fileID: 11400000, guid: 3cd0298fdccef4f43856e2fddb41eee3, type: 2}
+  dialogueImage: {fileID: 21300000, guid: 40df1bc35106f4946b5b4b7d88584e2a, type: 3}
 --- !u!114 &968006057625257060
 MonoBehaviour:
   m_ObjectHideFlags: 0
