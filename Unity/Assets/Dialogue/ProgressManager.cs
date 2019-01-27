@@ -31,16 +31,6 @@ public class ProgressManager : MonoBehaviour
         
     }
 
-    private void ResetNPCChecks()
-    {
-        npcCheckpoints.Clear();
-
-        foreach (NonPC npc in Enum.GetValues(typeof(NonPC)))
-        {
-            npcCheckpoints.Add(npc, 0);
-        }
-    }
-
     public bool IsNPCCheckpointReached(NonPC npc, int checkpoint)
     {
         int checkValue;
@@ -64,6 +54,16 @@ public class ProgressManager : MonoBehaviour
         npcCheckpoints.Add(npc, checkpoint);
     }
 
+    private void ResetNPCChecks()
+    {
+        npcCheckpoints.Clear();
+
+        foreach (NonPC npc in Enum.GetValues(typeof(NonPC)))
+        {
+            npcCheckpoints.Add(npc, 0);
+        }
+    }
+
     public bool IsGameStageReached(int stageCheck)
     {
         if(stageCheck <= gameStage)
@@ -73,6 +73,15 @@ public class ProgressManager : MonoBehaviour
         else
         {
             return false;
+        }
+    }
+
+    //call this when the next stage is reached (i.e. bridge is build or pickaxe is upgraded)
+    public void setGameStage(GameProgress newStage)
+    {
+        if(gameStage < (int) newStage)
+        {
+            gameStage = (int)newStage;
         }
     }
 }
