@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 
+public enum NonPC { Woodcutter, Hunter, Miner, Fisher, Electric };
+
 public class DialogueManager : MonoBehaviour
 {
 
@@ -24,6 +26,8 @@ public class DialogueManager : MonoBehaviour
 
     private GameObject talkingPlayer;
 
+    private ProgressManager progressMan;
+
     private void Awake()
     {
         dialogueManager = this;
@@ -34,6 +38,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();
         inConversation = false;
         gameObject.SetActive(false);
+
+        progressMan = new ProgressManager();
+
     }
 
     private void Update()
@@ -59,10 +66,43 @@ public class DialogueManager : MonoBehaviour
 
     public void StartConversation(Dialogue dialogue)
     {
+        bool continueDialogue = true;
+        
         if (dialogue == null)
         {
             return;
         }
+
+        //check if any unmet requirements exist
+        if (dialogue.requirements == true)
+        {
+            if(dialogue.stageReq > 0)
+            {
+                if (progressMan.IsGameStageReached(dialogue.stageReq) == false)
+                {
+                    continueDialogue = false;
+                }
+            }
+
+            if(dialogue.checkReq > 0)
+            {
+                if(progressMan.IsNPCCheckpointReached(dialogue.checkNPC, dialogue.checkReq) == false)
+                {
+                    continueDialogue = false;
+                }
+            }
+        }
+
+        if(continueDialogue == false)
+        {
+            //!!!!!
+            //TODO: Make the requirements failed sentence come up
+            //!!!!!
+
+            return;
+        }
+
+
         currentDialogue = dialogue;
         sentences.Clear();
         foreach (string sentence in dialogue.sentences)
@@ -72,6 +112,8 @@ public class DialogueManager : MonoBehaviour
         NextSentence();
         inConversation = true;
         gameObject.SetActive(true);
+
+
     }
 
     public void NextSentence()
@@ -100,5 +142,7 @@ public class DialogueManager : MonoBehaviour
             }
         }
     }
+    
+    
 
 }
