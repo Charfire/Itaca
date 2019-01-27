@@ -49,7 +49,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 4
-  interactionReach: 2
+  interactionReach: 1
+  hasPickaxe: 0
   resources: {fileID: 0}
   animator: {fileID: 101781774}
 --- !u!114 &101781776
