@@ -11,7 +11,10 @@ public class GainAbilityEnding : DialogueEnding
     public override bool EndDialogue(GameObject obj)
     {
         FindObjectOfType<PlayerController>().GainAbility(ability);
-        obj.GetComponentInChildren<SpriteRenderer>().sprite = newModel;
+        if(newModel != null)
+        {
+            obj.GetComponentInChildren<SpriteRenderer>().sprite = newModel;
+        }
         return true;
     }
 }
