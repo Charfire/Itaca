@@ -15,5 +15,10 @@ MonoBehaviour:
   sentences:
   - Here ya go.
   - Let's break some bigger rocks!
-  ending: {fileID: 0}
+  ending: {fileID: 11400000, guid: 2f54b28635f77784693626427e42e253, type: 2}
   previousDialogue: {fileID: 11400000, guid: e6a0820d0e42d19439ba9d80cbcfab4a, type: 2}
+  requirements: 0
+  stageReq: 0
+  checkNPC: 0
+  checkReq: 0
+  regsNotMetSentece: 

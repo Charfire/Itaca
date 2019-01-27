@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c452b5e065cf44e8e08980c6cfa784, type: 3}
-  m_Name: Upgrade Pickaxe Ending
+  m_Name: FishFindEnd
   m_EditorClassIdentifier: 
   setCheckpoint: 0
   setNewStage: 0
   buildingToPlace: {fileID: 0}
   placeCoordinates: {x: 0, y: 0}
-  cost: 10
-  resource: 1
+  cost: 0
+  resource: 0
   Fade: {fileID: 0}
   newPosition: {x: 0, y: 0}
-  successDialogue: {fileID: 11400000, guid: b24d7b0abd5426c48972c3471bc6af9f, type: 2}
-  failDialogue: {fileID: 11400000, guid: de558ddc31673dd47b283e20121120a2, type: 2}
+  successDialogue: {fileID: 0}
+  failDialogue: {fileID: 0}

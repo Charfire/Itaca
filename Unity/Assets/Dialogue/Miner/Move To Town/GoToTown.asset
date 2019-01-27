@@ -10,15 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c6c452b5e065cf44e8e08980c6cfa784, type: 3}
-  m_Name: Upgrade Pickaxe Ending
+  m_Name: GoToTown
   m_EditorClassIdentifier: 
   setCheckpoint: 0
   setNewStage: 0
   buildingToPlace: {fileID: 0}
   placeCoordinates: {x: 0, y: 0}
-  cost: 10
+  cost: 1
   resource: 1
-  Fade: {fileID: 0}
-  newPosition: {x: 0, y: 0}
-  successDialogue: {fileID: 11400000, guid: b24d7b0abd5426c48972c3471bc6af9f, type: 2}
+  Fade: {fileID: 2387221413114511712, guid: 085dc13d78d250544b7ca945b27a2a90, type: 3}
+  newPosition: {x: 62, y: -50}
+  successDialogue: {fileID: 11400000, guid: 7b8087809f2f52c42ab8a4890256e809, type: 2}
   failDialogue: {fileID: 11400000, guid: de558ddc31673dd47b283e20121120a2, type: 2}

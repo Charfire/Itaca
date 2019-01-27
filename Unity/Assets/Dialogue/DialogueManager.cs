@@ -68,7 +68,7 @@ public class DialogueManager : MonoBehaviour
     public void StartConversation(Dialogue dialogue)
     {
         bool continueDialogue = true;
-        
+
         if (dialogue == null)
         {
             return;

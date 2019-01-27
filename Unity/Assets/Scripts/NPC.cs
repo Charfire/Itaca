@@ -52,7 +52,7 @@ public class NPC : MonoBehaviour
             case "Hunter":
                 npcName = NonPC.Hunter;
                 break;
-            case "Fisher":
+            case "Fisherman":
                 npcName = NonPC.Fisher;
                 break;
             case "Electrician":

@@ -47,6 +47,15 @@ public class BuildingEnding : DialogueEnding
                 {
                     GameObject.Find("Bridge").GetComponent<Bridge>().BuildBridge();
                 }
+                
+                }
+            if (newPosition != Vector2.zero)
+            {
+
+                obj.transform.position = newPosition;
+
+            }
+
             return true;
             }
     }

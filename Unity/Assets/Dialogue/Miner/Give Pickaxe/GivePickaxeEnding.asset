@@ -12,4 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f82d425dce18b4b4bb84a944788ed6fd, type: 3}
   m_Name: GivePickaxeEnding
   m_EditorClassIdentifier: 
-  ability: pickaxe
+  setCheckpoint: 0
+  setNewStage: 0
+  ability: Pickaxe
+  newModel: {fileID: 0}
