@@ -12,8 +12,9 @@ GameObject:
   - component: {fileID: 3098706188065618799}
   - component: {fileID: 3098706188065618796}
   - component: {fileID: 4024393280653100532}
+  - component: {fileID: 5928918130708513091}
   m_Layer: 5
-  m_Name: Fade
+  m_Name: Fade Out
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,3 +95,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5928918130708513091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3098706188065618786}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e05b24f7fb1f7ec4e8ff5caebdf93f72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

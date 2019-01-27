@@ -2,20 +2,24 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fade : MonoBehaviour
+public class FadeOut : MonoBehaviour
 {
     private Animator animator;
+    [SerializeField]
+    private GameObject fadeIn;
+    private Canvas canvas;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        canvas = FindObjectOfType<Canvas>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (animator.GetCurrentAnimatorStateInfo(0).IsTag("Ended"))
         {
+            Instantiate(fadeIn, canvas.transform);
             Destroy(gameObject);
         }
     }
