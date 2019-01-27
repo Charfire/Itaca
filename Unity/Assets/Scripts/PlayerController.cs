@@ -49,7 +49,21 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetButtonDown("Jump"))
         {
-            Interact(playerLocation.TransformDirection(Vector3.up));
+            AnimatorClipInfo[] current = animator.GetCurrentAnimatorClipInfo(0);
+            if (current[0].clip.name.Contains("up"))
+            {
+                Interact(Vector2.up, interactionReach);
+            } else if(current[0].clip.name.Contains("right"))
+            {
+                Interact(Vector2.right, interactionReach);
+            } else if(current[0].clip.name.Contains("down"))
+            {
+                Interact(Vector2.down, interactionReach + 1);
+            } else
+            {
+                Interact(Vector2.left, interactionReach);
+            }
+            
         }
     }
 
@@ -70,9 +84,9 @@ public class PlayerController : MonoBehaviour
                                                 playerLocation.position.z);
     }
 
-    private void Interact(Vector2 direction)
+    private void Interact(Vector2 direction, float reach)
     {
-        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, interactionReach, LayerMask.GetMask("Interactable"));
+        RaycastHit2D hit = Physics2D.Raycast(playerLocation.position, direction, reach, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
             Debug.Log("Found " + hit.collider.tag);

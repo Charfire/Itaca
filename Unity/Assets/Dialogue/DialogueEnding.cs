@@ -6,4 +6,7 @@ using UnityEngine;
 public abstract class DialogueEnding : ScriptableObject
 {
     public abstract bool EndDialogue(GameObject obj);
+
+    public int setCheckpoint;
+    public GameProgress setNewStage;
 }
