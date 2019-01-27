@@ -477,14 +477,9 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-<<<<<<< HEAD
-  - {fileID: 1983666894}
-  - {fileID: 194274883}
-=======
   - {fileID: 460742465}
   - {fileID: 1239595137}
   - {fileID: 753973841}
->>>>>>> master
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

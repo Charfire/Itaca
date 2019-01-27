@@ -126,12 +126,12 @@ public class PlayerController : MonoBehaviour
         {
             ResManager.resourceManager.AddResourceAmount(Resource.Wood, 1);
             go.GetComponent<Tree>().chopAtTree(1);
-            AudioManager.audioManager.PlaySoundEffect(cutTreeClip);
+            //AudioManager.audioManager.PlaySoundEffect(cutTreeClip);
 
         }
         else
         {
-            DialogueManager.dialogueManager.StartConversation(chopWoodDialogue, dialogueImage, name, gameObject);
+            //DialogueManager.dialogueManager.StartConversation(chopWoodDialogue, dialogueImage, name, gameObject);
         }
 
     }
@@ -147,7 +147,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            DialogueManager.dialogueManager.StartConversation(mineStoneDialogue, dialogueImage, name, gameObject);
+            //DialogueManager.dialogueManager.StartConversation(mineStoneDialogue, dialogueImage, name, gameObject);
         }
 
     }
