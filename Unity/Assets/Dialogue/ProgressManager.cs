@@ -54,6 +54,8 @@ public class ProgressManager : MonoBehaviour
         npcCheckpoints = new Dictionary<NonPC, int>();
 
         npcCheckpoints.Add(npc, checkpoint);
+
+        Debug.Log("npc: " + npc.ToString() + " activated checkpoint " + checkpoint);
     }
 
     private void ResetNPCChecks()
