@@ -13,6 +13,8 @@ public class PlayerController : MonoBehaviour
 
     //abilities
     private bool hasAxe;
+    [SerializeField]
+    private bool hasPickaxe;
 
     //resource manager
     [SerializeField]
@@ -77,6 +79,11 @@ public class PlayerController : MonoBehaviour
             {
                 UseAxe(hit.collider.gameObject);
             }
+            
+            if (hit.collider.tag == "Stone")
+            {
+                UsePickaxe(hit.collider.gameObject);
+            }
 
             if (hit.collider.gameObject.name == "Axe")
             {
@@ -86,7 +93,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    
+
 
 
     //abilities
@@ -102,7 +109,22 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("If only I had an axe, I could chop some wood");
         }
-        
+
+    }
+
+    private void UsePickaxe(GameObject go)
+    {
+        if (hasPickaxe)
+        {
+            ResManager.resourceManager.AddResourceAmount(Resource.Stone , 1);
+            go.GetComponent<Stone>().pickStone(1);
+
+        }
+        else
+        {
+            Debug.Log("If only I had a pickaxe, I could gather some stone.");
+        }
+
     }
 
     //Dialogues can call to this to unlock abilities
@@ -113,5 +135,10 @@ public class PlayerController : MonoBehaviour
         {
             hasAxe = true;
         }
+        if (ability == "Pickaxe")
+        {
+            hasPickaxe = true;
+        }
+
     }
 }

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2645229816161819787}
   - component: {fileID: 632056462789385958}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: small rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,8 +65,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -569082211
-  m_SortingLayer: 2
+  m_SortingLayerID: 1671571665
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 56e156b9ae4d5c140887ebe0ddde03fa, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,9 +90,10 @@ GameObject:
   - component: {fileID: 4231325313421065501}
   - component: {fileID: 498678948930002067}
   - component: {fileID: 6361546225324061399}
-  m_Layer: 0
+  - component: {fileID: 518646903497429568}
+  m_Layer: 8
   m_Name: Small Rock
-  m_TagString: Untagged
+  m_TagString: Stone
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -167,3 +168,15 @@ PolygonCollider2D:
       - {x: -0.13655853, y: -0.7226124}
       - {x: 0.47257614, y: -0.55940247}
       - {x: 0.797451, y: -0.28621483}
+--- !u!114 &518646903497429568
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6290756695950288797}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8aa39aee238685440957809b70d23c1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
