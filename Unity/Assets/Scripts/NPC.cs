@@ -39,11 +39,15 @@ public class NPC : MonoBehaviour
             return;
         }
 
-        DialogueManager.dialogueManager.StartConversation(currentDialogue, dialogueImage, name);
+        DialogueManager.dialogueManager.StartConversation(currentDialogue, dialogueImage, name, gameObject);
     }
 
-    public void OnDialogueEnded(Dialogue dialogue)
+    public void OnDialogueEnded(Dialogue dialogue, GameObject obj)
     {
+        if(obj != gameObject)
+        {
+            return;
+        }
         if (currentDialogue == null)
         {
             return;

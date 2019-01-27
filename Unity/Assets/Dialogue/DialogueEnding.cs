@@ -5,5 +5,5 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "NPC/Dialogue/Ending")]
 public abstract class DialogueEnding : ScriptableObject
 {
-    public abstract bool EndDialogue();
+    public abstract bool EndDialogue(GameObject obj);
 }

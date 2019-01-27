@@ -20,7 +20,9 @@ public class DialogueManager : MonoBehaviour
 
     public static DialogueManager dialogueManager;
 
-    public event Action<Dialogue> DialogueSuccesfullyEnded;
+    public event Action<Dialogue, GameObject> DialogueSuccesfullyEnded;
+
+    private GameObject talkingPlayer;
 
     private void Awake()
     {
@@ -47,11 +49,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    public void StartConversation(Dialogue dialogue, Sprite npcImage, string npcName)
+    public void StartConversation(Dialogue dialogue, Sprite npcImage, string npcName, GameObject obj)
     {
         nameText.text = npcName;
         npcSprite.sprite = npcImage;
         StartConversation(dialogue);
+        talkingPlayer = obj;
     }
 
     public void StartConversation(Dialogue dialogue)
@@ -90,10 +93,10 @@ public class DialogueManager : MonoBehaviour
         gameObject.SetActive(false);
         if (currentDialogue.ending != null)
         {
-            bool successfullyEndedDialogue = currentDialogue.ending.EndDialogue();
+            bool successfullyEndedDialogue = currentDialogue.ending.EndDialogue(talkingPlayer);
             if (successfullyEndedDialogue)
             {
-                DialogueSuccesfullyEnded(currentDialogue);
+                DialogueSuccesfullyEnded(currentDialogue, talkingPlayer);
             }
         }
     }

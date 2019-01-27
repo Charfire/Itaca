@@ -127,6 +127,7 @@ MonoBehaviour:
   dialogueImage: {fileID: 21300000, guid: 65515c179bedf9a4389b02815f7ac054, type: 3}
   allDialogues:
   - {fileID: 11400000, guid: 4e21e8fbbd779fc46a49c91e1e1cc00e, type: 2}
+  - {fileID: 11400000, guid: fd2dc8610c8e6bf4a864a16672a9ddc7, type: 2}
 --- !u!61 &1966266953
 BoxCollider2D:
   m_ObjectHideFlags: 0

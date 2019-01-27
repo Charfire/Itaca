@@ -6,10 +6,12 @@ using UnityEngine;
 public class GainAbilityEnding : DialogueEnding
 {
     public string ability;
+    public Sprite newModel;
 
-    public override bool EndDialogue()
+    public override bool EndDialogue(GameObject obj)
     {
         FindObjectOfType<PlayerController>().GainAbility(ability);
+        obj.GetComponentInChildren<SpriteRenderer>().sprite = newModel;
         return true;
     }
 }
